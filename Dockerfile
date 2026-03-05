@@ -2,6 +2,8 @@ FROM golang:1.18 AS build
 WORKDIR /go/src
 COPY go ./go
 COPY main.go .
+COPY go.mod .
+COPY go.sum .
 
 ENV CGO_ENABLED=0
 RUN go get -d -v ./...
